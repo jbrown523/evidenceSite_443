@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Answers</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      #login-form {
+        margin: 100px auto;
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      #test-answers {
+        display: none;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="login-form">
+      <h2>Login to Access Answers</h2>
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        placeholder="Enter your username"
+      /><br /><br />
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter your password"
+      /><br /><br />
+      <button onclick="authenticate()">Login</button>
+    </div>
+
+    <div id="test-answers">
+      <h2>Test Answers</h2>
+      <img src="Key_P1.png" alt="Answers Here" />
+      <img src="Key_P2.png" alt="Answers Here" />
+    </div>
+
+    <script>
+      function authenticate() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Credentials for access.
+
+        const correctUsername = "username";
+        const correctPassword = "password";
+
+        if (username === correctUsername && password === correctPassword) {
+          document.getElementById("login-form").style.display = "none";
+          document.getElementById("test-answers").style.display = "block";
+        } else {
+          alert("Invalid username or password. Please try again.");
+        }
+      }
+    </script>
+  </body>
+</html>
